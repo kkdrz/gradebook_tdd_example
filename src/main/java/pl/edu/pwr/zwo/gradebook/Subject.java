@@ -21,11 +21,10 @@ public class Subject {
     }
 
     public double getAverage() {
-        double noteSum = 0;
-        for (double note : notes) {
-            noteSum += note;
-        }
-        return noteSum / notes.size();
+        return notes.stream()
+                .mapToDouble(val -> val)
+                .average()
+                .orElse(0.0);
     }
 
 }
