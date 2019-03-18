@@ -23,11 +23,8 @@ public class GradeBook {
         throw new IllegalArgumentException(String.format("Subject %s doesn't exist.", subject));
     }
 
-    public void addNote(String subject, double note) {
-        if (!subjects.containsKey(subject)) {
-            throw new IllegalArgumentException(String.format("Subject %s doesn't exist.", subject));
-        }
-
-        subjects.get(subject).addNote(note);
+    public void addNote(String subjectName, double note) {
+        Subject subject = getSubject(subjectName);
+        subject.addNote(note);
     }
 }
