@@ -23,4 +23,7 @@ public class GradeBook {
         throw new IllegalArgumentException(String.format("Subject %s doesn't exist.", subject));
     }
 
+    public void addNote(String subject, double note) {
+        subjects.get(subject).addNote(note);
+    }
 }
