@@ -6,6 +6,8 @@ import static org.junit.Assert.assertNotNull;
 
 public class GradeBookTest {
 
+    private static final String SUBJECT = "matematyka";
+
     @Test
     public void shouldCreateGradeBook() {
         GradeBook gradeBook = new GradeBook();
@@ -17,17 +19,17 @@ public class GradeBookTest {
     public void shouldThrowExceptionWhenAddingSubjectThatAlreadyExists() {
         GradeBook gradeBook = new GradeBook();
 
-        gradeBook.addSubject("matematyka");
-        gradeBook.addSubject("matematyka");
+        gradeBook.addSubject(SUBJECT);
+        gradeBook.addSubject(SUBJECT);
     }
 
     @Test
     public void shouldGetSubjectFromGradeBook() {
         GradeBook gradeBook = new GradeBook();
 
-        gradeBook.addSubject("matematyka");
+        gradeBook.addSubject(SUBJECT);
 
-        assertNotNull(gradeBook.getSubject("matematyka"));
+        assertNotNull(gradeBook.getSubject(SUBJECT));
     }
 
 }
