@@ -39,4 +39,14 @@ public class GradeBookTest {
         gradeBook.getSubject(SUBJECT);
     }
 
+    @Test
+    public void shouldGetValidSubjectFromGradeBook() {
+        GradeBook gradeBook = new GradeBook();
+        gradeBook.addSubject(SUBJECT);
+
+        Subject subject = gradeBook.getSubject(SUBJECT);
+
+        assertEquals(SUBJECT, subject.getName());
+    }
+
 }
