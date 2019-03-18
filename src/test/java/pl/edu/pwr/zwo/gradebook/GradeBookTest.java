@@ -9,6 +9,7 @@ import static org.junit.Assert.assertNotNull;
 public class GradeBookTest {
 
     private static final String SUBJECT = "matematyka";
+    private static final String OTHER_SUBJECT = "fizyka";
 
     private GradeBook gradeBookWithSubject;
 
@@ -57,13 +58,13 @@ public class GradeBookTest {
     }
 
     @Test
-    public void shouldComputeGlobalAverageNote()  {
+    public void shouldComputeGlobalAverageNote() {
         gradeBookWithSubject.addNote(SUBJECT, 3);
         gradeBookWithSubject.addNote(SUBJECT, 5);
 
-        gradeBookWithSubject.addSubject("fizyka");
-        gradeBookWithSubject.addNote("fizyka", 2);
-        gradeBookWithSubject.addNote("fizyka", 4);
+        gradeBookWithSubject.addSubject(OTHER_SUBJECT);
+        gradeBookWithSubject.addNote(OTHER_SUBJECT, 2);
+        gradeBookWithSubject.addNote(OTHER_SUBJECT, 4);
 
         assertEquals(3.5, gradeBookWithSubject.getAverageNote(), 0.001);
     }

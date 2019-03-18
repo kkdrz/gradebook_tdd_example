@@ -29,10 +29,12 @@ public class GradeBook {
     }
 
     public double getAverageNote() {
-        double noteSum = 0;
-        for (Subject subject : subjects.values()) {
-            noteSum += subject.getAverage();
-        }
-        return noteSum / subjects.size();
+        return subjects.values()
+                .stream()
+                .mapToDouble(Subject::getAverage)
+                .average()
+                .orElse(0.0);
+
     }
+
 }
