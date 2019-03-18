@@ -19,4 +19,12 @@ public class GradeBookTest {
 
         gradeBook.addSubject("matematyka");
     }
+
+    @Test(expected = IllegalStateException.class)
+    public void shouldThrowExceptionWhenAddingSubjectThatAlreadyExists() {
+        GradeBook gradeBook = new GradeBook();
+
+        gradeBook.addSubject("matematyka");
+        gradeBook.addSubject("matematyka");
+    }
 }
