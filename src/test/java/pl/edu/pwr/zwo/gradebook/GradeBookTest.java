@@ -32,4 +32,11 @@ public class GradeBookTest {
         assertNotNull(gradeBook.getSubject(SUBJECT));
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void shouldThrowExceptionWhenGettingNonExistingSubject() {
+        GradeBook gradeBook = new GradeBook();
+
+        gradeBook.getSubject(SUBJECT);
+    }
+
 }
