@@ -1,5 +1,6 @@
 package pl.edu.pwr.zwo.gradebook;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -8,6 +9,14 @@ import static org.junit.Assert.assertNotNull;
 public class GradeBookTest {
 
     private static final String SUBJECT = "matematyka";
+
+    private GradeBook gradeBookWithSubject;
+
+    @Before
+    public void setUp() {
+        gradeBookWithSubject = new GradeBook();
+        gradeBookWithSubject.addSubject(SUBJECT);
+    }
 
     @Test
     public void shouldCreateGradeBook() {
@@ -18,10 +27,7 @@ public class GradeBookTest {
 
     @Test(expected = IllegalStateException.class)
     public void shouldThrowExceptionWhenAddingSubjectThatAlreadyExists() {
-        GradeBook gradeBook = new GradeBook();
-
-        gradeBook.addSubject(SUBJECT);
-        gradeBook.addSubject(SUBJECT);
+        gradeBookWithSubject.addSubject(SUBJECT);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -33,20 +39,14 @@ public class GradeBookTest {
 
     @Test
     public void shouldGetValidSubjectFromGradeBook() {
-        GradeBook gradeBook = new GradeBook();
-        gradeBook.addSubject(SUBJECT);
-
-        Subject subject = gradeBook.getSubject(SUBJECT);
+        Subject subject = gradeBookWithSubject.getSubject(SUBJECT);
 
         assertEquals(SUBJECT, subject.getName());
     }
 
     @Test
     public void shouldAddNoteToSubject() {
-        GradeBook gradeBook = new GradeBook();
-        gradeBook.addSubject(SUBJECT);
-
-        gradeBook.addNote(SUBJECT, 4.5);
+        gradeBookWithSubject.addNote(SUBJECT, 4.5);
     }
 
 }
