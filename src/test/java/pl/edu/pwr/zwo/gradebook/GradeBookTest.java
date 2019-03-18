@@ -20,4 +20,14 @@ public class GradeBookTest {
         gradeBook.addSubject("matematyka");
         gradeBook.addSubject("matematyka");
     }
+
+    @Test
+    public void shouldGetSubjectFromGradeBook() {
+        GradeBook gradeBook = new GradeBook();
+
+        gradeBook.addSubject("matematyka");
+
+        assertNotNull(gradeBook.getSubject("matematyka"));
+    }
+
 }
