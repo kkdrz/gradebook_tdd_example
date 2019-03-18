@@ -20,7 +20,7 @@ public class GradeBook {
             return subjects.get(subject);
         }
 
-        throw new IllegalArgumentException();
+        throw new IllegalArgumentException(String.format("Subject %s doesn't exist.", subject));
     }
 
 }
