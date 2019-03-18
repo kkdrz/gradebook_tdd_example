@@ -1,13 +1,13 @@
 package pl.edu.pwr.zwo.gradebook;
 
-import java.util.LinkedList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class GradeBook {
 
-    private List<Subject> subjects = new LinkedList<>();
+    private Map<String, Subject> subjects = new HashMap<>();
 
-    public void addSubject(Subject subject) {
-        subjects.add(subject);
+    public void addSubject(String subject) {
+        subjects.put(subject, new Subject(subject));
     }
 }

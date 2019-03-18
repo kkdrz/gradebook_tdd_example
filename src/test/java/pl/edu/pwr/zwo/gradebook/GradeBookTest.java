@@ -17,6 +17,6 @@ public class GradeBookTest {
     public void shouldAddNewSubject() {
         GradeBook gradeBook = new GradeBook();
 
-        gradeBook.addSubject(new Subject("matematyka"));
+        gradeBook.addSubject("matematyka");
     }
 }
