@@ -16,6 +16,11 @@ public class GradeBook {
     }
 
     public Subject getSubject(String subject) {
-        return subjects.get(subject);
+        if (subjects.containsKey(subject)) {
+            return subjects.get(subject);
+        }
+
+        throw new IllegalArgumentException();
     }
+
 }
