@@ -49,4 +49,11 @@ public class GradeBookTest {
         gradeBookWithSubject.addNote(SUBJECT, 4.5);
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void shouldThrowExceptionWhenAddingNoteToNonExistingSubject() {
+        GradeBook gradeBook = new GradeBook();
+
+        gradeBook.addNote(SUBJECT, 4.5);
+    }
+
 }
