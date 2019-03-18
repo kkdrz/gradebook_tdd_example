@@ -41,4 +41,12 @@ public class GradeBookTest {
         assertEquals(SUBJECT, subject.getName());
     }
 
+    @Test
+    public void shouldAddNoteToSubject() {
+        GradeBook gradeBook = new GradeBook();
+        gradeBook.addSubject(SUBJECT);
+
+        gradeBook.addNote(SUBJECT, 4.5);
+    }
+
 }
